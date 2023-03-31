@@ -33,7 +33,35 @@ public class CustomLinkedList<T> : IEnumerable<T>
         }
         Count++;
         return newNode;
+    }  
+    
+    
+    
+    public CustomLinkedNodes<T> AddLast(T value)
+    {
+        CustomLinkedNodes<T> newNode = new(value);
+        if (Last is null)
+        {
+            First = newNode;
+            Last = newNode;
+            Last.Previous = null;
+            Last.Next = null;
+        }
+        else
+        {
+            var prev = Last;
+            Last = newNode;
+            Last.Previous = prev;
+            prev.Next = Last;
+            Last.Next = null;
+        }
+        Count++;
+        return newNode;
     }
+
+
+
+
 
     public IEnumerator<T> GetEnumerator()
     {
