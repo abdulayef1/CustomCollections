@@ -1,9 +1,10 @@
 ﻿using Collections.Nodes;
+using System.Collections;
 using System.Security.Authentication;
 
 namespace Collections.Collections;
 
-public class CustomLinkedList<T>
+public class CustomLinkedList<T> : IEnumerable<T>
 {
 
     public CustomLinkedNodes<T>? First { get; set; }
@@ -28,13 +29,24 @@ public class CustomLinkedList<T>
             First = newNode;
             First.Next = next;
             next.Previous = First;
-            next.Next = null;
             First.Previous = null;
         }
-
+        Count++;
         return newNode;
     }
 
+    public IEnumerator<T> GetEnumerator()
+    {
+        CustomLinkedNodes<T>? temp = First;
+        while (temp!=null)
+        {
+            yield return temp.Value;
+            temp= temp.Next;
+        }
+    }
 
-
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
 }
