@@ -13,3 +13,6 @@ C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\refint\TestApp.dll
 C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\TestApp.pdb
 C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\TestApp.genruntimeconfig.cache
 C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\ref\TestApp.dll
+C:\WorkSpace\CustomCollection\TestApp\bin\Debug\net6.0\Collections.dll
+C:\WorkSpace\CustomCollection\TestApp\bin\Debug\net6.0\Collections.pdb
+C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\TestApp.csproj.CopyComplete
