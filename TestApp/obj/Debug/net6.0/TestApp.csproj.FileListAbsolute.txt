@@ -1,0 +1,15 @@
+C:\WorkSpace\CustomCollection\TestApp\bin\Debug\net6.0\TestApp.exe
+C:\WorkSpace\CustomCollection\TestApp\bin\Debug\net6.0\TestApp.deps.json
+C:\WorkSpace\CustomCollection\TestApp\bin\Debug\net6.0\TestApp.runtimeconfig.json
+C:\WorkSpace\CustomCollection\TestApp\bin\Debug\net6.0\TestApp.dll
+C:\WorkSpace\CustomCollection\TestApp\bin\Debug\net6.0\TestApp.pdb
+C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\TestApp.csproj.AssemblyReference.cache
+C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\TestApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\TestApp.AssemblyInfoInputs.cache
+C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\TestApp.AssemblyInfo.cs
+C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\TestApp.csproj.CoreCompileInputs.cache
+C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\TestApp.dll
+C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\refint\TestApp.dll
+C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\TestApp.pdb
+C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\TestApp.genruntimeconfig.cache
+C:\WorkSpace\CustomCollection\TestApp\obj\Debug\net6.0\ref\TestApp.dll
