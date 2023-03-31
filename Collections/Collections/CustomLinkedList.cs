@@ -1,6 +1,5 @@
 ﻿using Collections.Nodes;
 using System.Collections;
-using System.Security.Authentication;
 
 namespace Collections.Collections;
 
@@ -20,6 +19,7 @@ public class CustomLinkedList<T> : IEnumerable<T>
         if (First is null)
         {
             First = newNode;
+            Last = newNode;
             First.Previous = null;
             First.Next = null;
         }
@@ -43,7 +43,7 @@ public class CustomLinkedList<T> : IEnumerable<T>
             yield return temp.Value;
             temp= temp.Next;
         }
-    }
+    }   
 
     IEnumerator IEnumerable.GetEnumerator()
     {
