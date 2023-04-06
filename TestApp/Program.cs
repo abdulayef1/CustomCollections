@@ -21,20 +21,22 @@ using Collections.Collections;
 
 CustomLinkedList<int> list = new CustomLinkedList<int>();
 
+var node=list.AddLast(9);
 list.AddLast(1);
 list.AddLast(3);
-var node=list.AddLast(9);
 list.AddLast(5);
 
 Console.WriteLine("Numbers:");
 
-list.AddAfter(node,13);
+list.AddBefore(node,13);
+var test = list.Find(13);
+Console.WriteLine(test.Value);
+//![13,1,3,5,9]
 
-foreach (var item in list)
-{
-    Console.Write($" {item} ");
-}
-//[1,3,5,9,13]
+//foreach (var item in list)
+//{
+//    Console.Write($" {item} ");
+//}
 //Console.WriteLine();
 //Console.WriteLine("----------------------------");
 

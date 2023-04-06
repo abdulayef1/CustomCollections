@@ -88,6 +88,31 @@ public class CustomLinkedList<T> : IEnumerable<T>
 
     }
 
+    public CustomLinkedNodes<T> AddBefore(CustomLinkedNodes<T> before, T value)
+    {
+        CustomLinkedNodes<T> newNode = new(value);
+        var node = Find(before.Value);
+        if (node != null)
+        {
+            Count++;
+            var previous = node.Previous;
+            if (previous is null)
+            {
+                previous = newNode;
+                newNode.Next = node;
+                newNode.Previous = null;
+                return newNode;
+            }
+            newNode.Previous = previous;
+            previous.Next = newNode;
+            previous = newNode;
+            newNode.Next = node;
+            return newNode;
+        }
+        return default;
+
+    }
+
 
 
 
