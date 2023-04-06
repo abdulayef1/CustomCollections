@@ -1,4 +1,6 @@
-﻿//LinkedList<int> list = new LinkedList<int>();
+﻿
+using Collections.Collections;
+//LinkedList<int> list = new LinkedList<int>();
 //list.AddFirst(2);
 //list.AddFirst(4);
 //6 12 4 2
@@ -17,18 +19,26 @@
 
 
 
-using Collections.Collections;
-
 CustomLinkedList<int> list = new CustomLinkedList<int>();
-list.AddFirst(0);
-list.AddFirst(1);
-list.AddFirst(2);
-var node=list.AddFirst(3);
-list.AddAfter(node,6);
+
+list.AddLast(1);
+list.AddLast(3);
+var node=list.AddLast(9);
+list.AddLast(5);
+
+Console.WriteLine("Numbers:");
+
+list.AddAfter(node,13);
+
 foreach (var item in list)
 {
-    Console.WriteLine(item);
+    Console.Write($" {item} ");
 }
+//[1,3,5,9,13]
+//Console.WriteLine();
+//Console.WriteLine("----------------------------");
+
+
 
 
 

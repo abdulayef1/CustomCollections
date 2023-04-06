@@ -55,7 +55,7 @@ public class CustomLinkedList<T> : IEnumerable<T>
         Count++;
         return newNode;
     }
-    public CustomLinkedNodes<T> Find(T value)
+    public CustomLinkedNodes<T> Find(T value)  
     {
         CustomLinkedNodes<T>? temp = First;
         while (temp != null)
@@ -76,14 +76,14 @@ public class CustomLinkedList<T> : IEnumerable<T>
         var node=Find(after.Value);
         if (node!=null)
         {
+            Count++;
             var next = node.Next;
-            next.Previous = newNode;
+            if (next != null) next.Previous = newNode;
             node.Next = newNode;
             newNode.Previous = node;
             newNode.Next = next;
             return newNode;
         }
-
         return default;
 
     }
@@ -106,3 +106,4 @@ public class CustomLinkedList<T> : IEnumerable<T>
         return GetEnumerator();
     }
 }
+    
