@@ -55,7 +55,7 @@ public class CustomLinkedList<T> : IEnumerable<T>
         Count++;
         return newNode;
     }
-    public CustomLinkedNodes<T> Find(T value)  
+    public CustomLinkedNodes<T> Find(T value)
     {
         CustomLinkedNodes<T>? temp = First;
         while (temp != null)
@@ -70,18 +70,22 @@ public class CustomLinkedList<T> : IEnumerable<T>
 
     }
 
-    public CustomLinkedNodes<T> AddAfter(CustomLinkedNodes<T>  after, T value)
+    public CustomLinkedNodes<T> AddAfter(CustomLinkedNodes<T> after, T value)
     {
-        CustomLinkedNodes<T> newNode = new(value);
-        var node=Find(after.Value);
-        if (node!=null)
+        var node = Find(after.Value);
+        if (node != null)
         {
-            Count++;
             var next = node.Next;
-            if (next != null) next.Previous = newNode;
+            if (next is null)
+            {
+                return AddLast(value);
+            }
+            CustomLinkedNodes<T> newNode = new(value);
+            next.Previous = newNode;
             node.Next = newNode;
             newNode.Previous = node;
             newNode.Next = next;
+            Count++;
             return newNode;
         }
         return default;
@@ -90,19 +94,16 @@ public class CustomLinkedList<T> : IEnumerable<T>
 
     public CustomLinkedNodes<T> AddBefore(CustomLinkedNodes<T> before, T value)
     {
-        CustomLinkedNodes<T> newNode = new(value);
         var node = Find(before.Value);
         if (node != null)
         {
-            Count++;
             var previous = node.Previous;
             if (previous is null)
             {
-                previous = newNode;
-                newNode.Next = node;
-                newNode.Previous = null;
-                return newNode;
+                return AddFirst(value);
             }
+            Count++;
+            CustomLinkedNodes<T> newNode = new(value);
             newNode.Previous = previous;
             previous.Next = newNode;
             previous = newNode;
@@ -131,4 +132,3 @@ public class CustomLinkedList<T> : IEnumerable<T>
         return GetEnumerator();
     }
 }
-    

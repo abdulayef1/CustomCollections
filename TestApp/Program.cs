@@ -20,25 +20,35 @@ using Collections.Collections;
 
 
 CustomLinkedList<int> list = new CustomLinkedList<int>();
-
-var node=list.AddLast(9);
 list.AddLast(1);
+list.AddFirst(29);
 list.AddLast(3);
+var node=list.AddLast(9);
 list.AddLast(5);
+list.AddFirst(29);
+list.AddLast(37);
+list.AddLast(7);
 
 Console.WriteLine("Numbers:");
 
-list.AddBefore(node,13);
-var test = list.Find(13);
-Console.WriteLine(test.Value);
+var addedNnode=list.AddAfter(node,13);
+var addedNnode1=list.AddAfter(addedNnode, 14);
+list.AddBefore(addedNnode1, 99);
+var addedNnode2=list.AddAfter(addedNnode1, 16);
+list.AddBefore(addedNnode, 151);
+list.AddAfter(addedNnode2, 23);
+
+//Console.WriteLine(list.Last.Next.Value);
+
+//Console.WriteLine(list.Count);
 //![13,1,3,5,9]
 
-//foreach (var item in list)
-//{
-//    Console.Write($" {item} ");
-//}
-//Console.WriteLine();
-//Console.WriteLine("----------------------------");
+foreach (var item in list)
+{
+    Console.Write($" {item} ");
+}
+Console.WriteLine();
+Console.WriteLine("----------------------------");
 
 
 
