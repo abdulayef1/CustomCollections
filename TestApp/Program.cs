@@ -1,5 +1,6 @@
 ﻿
 using Collections.Collections;
+using System.ComponentModel;
 //LinkedList<int> list = new LinkedList<int>();
 //list.AddFirst(2);
 //list.AddFirst(4);
@@ -21,27 +22,12 @@ using Collections.Collections;
 
 CustomLinkedList<int> list = new CustomLinkedList<int>();
 list.AddLast(1);
-list.AddFirst(29);
+list.AddLast(2);
 list.AddLast(3);
-var node=list.AddLast(9);
-list.AddLast(5);
-list.AddFirst(29);
-list.AddLast(37);
-list.AddLast(7);
+list.AddLast(4);
+var node=list.AddLast(5);
+list.Remove(node);
 
-Console.WriteLine("Numbers:");
-
-var addedNnode=list.AddAfter(node,13);
-var addedNnode1=list.AddAfter(addedNnode, 14);
-list.AddBefore(addedNnode1, 99);
-var addedNnode2=list.AddAfter(addedNnode1, 16);
-list.AddBefore(addedNnode, 151);
-list.AddAfter(addedNnode2, 23);
-
-//Console.WriteLine(list.Last.Next.Value);
-
-//Console.WriteLine(list.Count);
-//![13,1,3,5,9]
 
 foreach (var item in list)
 {
@@ -49,6 +35,33 @@ foreach (var item in list)
 }
 Console.WriteLine();
 Console.WriteLine("----------------------------");
+
+
+
+//LinkedList<int> list2 = new LinkedList<int>();
+//list2.AddLast(1);
+//list2.AddLast(2);
+//list2.AddLast(3);
+//list2.AddLast(4);
+
+//Console.WriteLine(list2.Remove(12));
+
+
+
+
+
+
+
+
+
+
+
+
+
+//? TASK:CUSTOM REMOVE METHOD
+
+
+
 
 
 

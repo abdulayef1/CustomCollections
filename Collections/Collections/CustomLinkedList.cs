@@ -9,6 +9,20 @@ public class CustomLinkedList<T> : IEnumerable<T>
     public CustomLinkedNodes<T>? First { get; set; }
     public CustomLinkedNodes<T>? Last { get; set; }
     public int Count { get; private set; }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+    public IEnumerator<T> GetEnumerator()
+    {
+        CustomLinkedNodes<T>? temp = First;
+        while (temp != null)
+        {
+            yield return temp.Value;
+            temp = temp.Next;
+        }
+    }
     public CustomLinkedList()
     {
         Count = 0;
@@ -69,7 +83,6 @@ public class CustomLinkedList<T> : IEnumerable<T>
         return default;
 
     }
-
     public CustomLinkedNodes<T> AddAfter(CustomLinkedNodes<T> after, T value)
     {
         var node = Find(after.Value);
@@ -91,7 +104,6 @@ public class CustomLinkedList<T> : IEnumerable<T>
         return default;
 
     }
-
     public CustomLinkedNodes<T> AddBefore(CustomLinkedNodes<T> before, T value)
     {
         var node = Find(before.Value);
@@ -113,22 +125,44 @@ public class CustomLinkedList<T> : IEnumerable<T>
         return default;
 
     }
-
-
-
-
-    public IEnumerator<T> GetEnumerator()
+    public bool Remove(T value)
     {
-        CustomLinkedNodes<T>? temp = First;
-        while (temp != null)
+        var node = Find(value);
+        if (node is null) return false;
+        var next = node.Next;
+        var prev = node.Previous;
+        if (next is null) 
         {
-            yield return temp.Value;
-            temp = temp.Next;
+            RemoveLast();
+            return true;
         }
+        if (prev is null) 
+        {
+            RemoveFirst();
+            return true;
+        }
+        next.Previous = prev;
+        prev.Next = next;
+        Count--;
+        return true;
     }
-
-    IEnumerator IEnumerable.GetEnumerator()
+    public void Remove(CustomLinkedNodes<T> node)
     {
-        return GetEnumerator();
+        Remove(node.Value);
     }
+    public void RemoveFirst()
+    {
+        First = First.Next;
+        First.Previous = null;
+        Count--;
+    }
+    public void RemoveLast()
+    {
+        Last = Last.Previous;
+        Last.Next = null;
+        Count--;
+    }
+    
+    
+
 }
