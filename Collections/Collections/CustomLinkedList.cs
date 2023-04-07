@@ -131,12 +131,12 @@ public class CustomLinkedList<T> : IEnumerable<T>
         if (node is null) return false;
         var next = node.Next;
         var prev = node.Previous;
-        if (next is null) 
+        if (next is null)
         {
             RemoveLast();
             return true;
         }
-        if (prev is null) 
+        if (prev is null)
         {
             RemoveFirst();
             return true;
@@ -162,7 +162,6 @@ public class CustomLinkedList<T> : IEnumerable<T>
         Last.Next = null;
         Count--;
     }
-    
     public void Clear()
     {
         var temp = First;
@@ -173,7 +172,6 @@ public class CustomLinkedList<T> : IEnumerable<T>
             next = null;
             temp = temp.Next;
         }
+        Count = 0;
     }
-    
-
 }
