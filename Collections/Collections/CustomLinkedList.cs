@@ -163,6 +163,17 @@ public class CustomLinkedList<T> : IEnumerable<T>
         Count--;
     }
     
+    public void Clear()
+    {
+        var temp = First;
+
+        while (temp != null)
+        {
+            var next = temp;
+            next = null;
+            temp = temp.Next;
+        }
+    }
     
 
 }
